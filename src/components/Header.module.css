@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #205a94;
+  width: 100vw;
+  color: #fff;
+}
+
+.img {
+  margin-left: 10px;
+  height: 50px;
+  width: 150px;
+  /* width: "20%"; */
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.search {
+  margin-right: 30px;
+  width: 15vw;
+  background-color: #deeeff;
+  border: none;
+  border-radius: 8px;
+  color: black;
+}
+
+.ico {
+  margin-right: 10px;
+}
