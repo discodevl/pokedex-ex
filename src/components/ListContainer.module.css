@@ -1,20 +1,35 @@
+@font-face {
+  font-family: pokemon;
+  src: url(../assets/Pokemon\ Hollow.ttf);
+}
 .container {
   display: flex;
   flex-direction: column;
   width: 60%;
+  height: 30%;
   align-items: center;
   justify-content: flex-start;
   border: 1px solid black;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.5);
   margin-top: 10px;
+  overflow-y: auto;
 }
 
 .title {
+  font-family: pokemon;
   width: 100%;
   border-bottom: 1px solid black;
   text-align: center;
   margin: 10px 0 0 0;
+}
+
+.grid{
+  width: 100%;
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
 }
 
 .main {

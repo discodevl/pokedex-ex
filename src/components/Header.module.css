@@ -1,7 +1,9 @@
 .header {
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  background-color: #205a94;
+  background-color: #fec806cc;
   width: 100vw;
   color: #fff;
 }
@@ -22,6 +24,7 @@
 .search {
   margin-right: 30px;
   width: 15vw;
+  height: 25px;
   background-color: #deeeff;
   border: none;
   border-radius: 8px;

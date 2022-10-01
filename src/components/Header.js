@@ -1,9 +1,9 @@
 import styles from "./Header.module.css";
 
 function Header({ filterhandler }) {
-
   function searchHandler(event) {
-    filterhandler(event.target.value);
+    const search = event.target.value.trim();
+    filterhandler(search);
   }
 
   return (
@@ -11,7 +11,7 @@ function Header({ filterhandler }) {
       <img
         className={styles.img}
         alt="logo-pokemon"
-        src={require('../assets/Logo-Pokemon-1090085982.png')}
+        src={require("../assets/Logo-Pokemon-1090085982.png")}
       />
       <div className={styles.searchContainer}>
         <div className={styles.ico}>
@@ -33,12 +33,11 @@ function Header({ filterhandler }) {
         </div>
 
         <input
-          id='input-character'
+          id="input-character"
           className={styles.search}
           type="text"
           placeholder=" search for a pokemon..."
           onChange={searchHandler}
-
         />
       </div>
     </div>

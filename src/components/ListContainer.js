@@ -5,7 +5,7 @@ function CardList({ children, title, main }) {
   return (
     <div className={`${styles.container} ${main && styles.main}`}>
       <h2 className={styles.title}>{title}</h2>
-      {children}
+      <div className={styles.grid}>{children}</div>
     </div>
   );
 }

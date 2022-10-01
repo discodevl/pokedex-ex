@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: #397bb4;
+  background-color: #d69e4b;
 }
 
 code {
@@ -19,7 +19,8 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background: url(""); to do*/
+  background: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/Pokemon-Phone-Eevee-Wallpaper-HD-1.jpg");
   background-repeat: repeat;
   background-size: auto;
+  height: 100vh;
 }

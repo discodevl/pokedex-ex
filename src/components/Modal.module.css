@@ -1,0 +1,31 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: white;
+  width: 60%;
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  display: block !important;
+  overflow-y: hidden;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.stats{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.img{
+  color: rgba(255, 251, 0, 0.543);
+  width: 20%;
+  height: 20%;
+}
