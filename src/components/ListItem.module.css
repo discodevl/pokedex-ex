@@ -1,4 +1,3 @@
-
 .container {
   height: 100%;
   text-align: center;
@@ -10,15 +9,13 @@
   max-height: 96px;
 }
 
-/* .ico {
+.containerTitle {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  justify-content: space-between;
+  margin-left: 5px;
 }
 
-.svgAdd:hover {
-  fill: yellow;
+.bold{
+  font-weight: bold;
 }
-.svgRemove:hover {
-  fill: gray;
-} */

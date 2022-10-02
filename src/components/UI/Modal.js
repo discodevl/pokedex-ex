@@ -4,7 +4,6 @@ import styles from "./Modal.module.css";
 
 function Modal({ pokemon }) {
   const [types, setTypes] = useState(pokemon.types);
-  console.log(types);
 
   return ReactDom.createPortal(
     <div className={styles.modal}>

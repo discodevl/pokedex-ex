@@ -6,6 +6,7 @@ import Backdrop from "./UI/BackDrop";
 import Modal from "./UI/Modal";
 
 import styles from "./ListItem.module.css";
+import PokeballSvg from "./UI/PokeballSvg";
 
 function ListItem({ url, data, children }) {
   const context = useContext(pokeContext);
@@ -38,11 +39,10 @@ function ListItem({ url, data, children }) {
         onClick={toggleModal}
         style={{ backgroundColor: getTypeColor(type), borderRadius: "16px" }}
       >
-        <div>
-          <span>
-            <b>{children}</b>
-          </span>
+        <div className={styles.containerTitle}>
           <span> #{pokemon.id}</span>
+          <span className={styles.bold}>{children}</span>
+          <PokeballSvg />
         </div>
         <img
           className={styles.img}

@@ -7,11 +7,11 @@ function Pagination({ pagehandler }) {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    setPageCount(Math.ceil(1140 / 20));
+    setPageCount(Math.ceil(1160 / 20));
   }, [itemOffset]);
 
   function handlePageClick({ selected }) {
-    const newOffset = (selected * 20) % 1140;
+    const newOffset = (selected * 20) % 1160;
     setItemOffset(newOffset);
     pagehandler(selected + 1);
   }
