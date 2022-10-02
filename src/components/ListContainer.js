@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ListContainer.module.css";
 
-function CardList({ children, title, main }) {
+function CardList({ children, title }) {
   return (
-    <div className={`${styles.container} ${main && styles.main}`}>
+    <div className={styles.container}>
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.grid}>{children}</div>
     </div>

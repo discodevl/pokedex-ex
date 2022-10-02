@@ -1,3 +1,7 @@
+.container{
+  position: absolute;
+  bottom: 0;
+}
 .pagination {
   list-style: none;
   display: flex;
@@ -5,9 +9,10 @@
   align-items: center;
   margin-bottom: 10px;
   font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.935);
   width: 100%;
   border-radius: 15px;
+  border: 2px solid #fec806;
 }
 
 .page-num {
@@ -23,8 +28,8 @@
 }
 
 .active {
-  border: 3px solid aqua;
-  background-color: aquamarine;
+  border: 3px solid #fec806cc;
+  background-color: #ffd748cc;
   border-radius: 8px;
   font-weight: bold;
 }

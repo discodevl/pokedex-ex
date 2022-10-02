@@ -1,0 +1,10 @@
+.container{
+    margin-right: 20px;
+}
+.btn{
+    background: none;
+    border: 2px solid #2361a2;
+    border-radius: 8px;
+    height: 28px;
+    color: #2361a2;
+}

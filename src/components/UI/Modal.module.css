@@ -24,8 +24,13 @@
 
 }
 
+.containerImg{
+  display: flex;
+  flex-direction: column;
+}
+
 .img{
   color: rgba(255, 251, 0, 0.543);
-  width: 20%;
-  height: 20%;
+  width: 240px;
+  height: 240px;
 }

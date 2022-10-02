@@ -1,19 +1,23 @@
+import Button from "./Button";
 import styles from "./Header.module.css";
 
-function Header({ filterhandler }) {
+function Header({ filterhandler, onClickButton}) {
   function searchHandler(event) {
     const search = event.target.value.trim();
     filterhandler(search);
   }
+
+
 
   return (
     <div className={styles.header}>
       <img
         className={styles.img}
         alt="logo-pokemon"
-        src={require("../assets/Logo-Pokemon-1090085982.png")}
+        src={require("../../assets/Logo-Pokemon-1090085982.png")}
       />
       <div className={styles.searchContainer}>
+        <Button onClick={onClickButton}>My pokemons</Button>
         <div className={styles.ico}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

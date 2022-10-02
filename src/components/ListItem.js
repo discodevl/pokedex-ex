@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetcher } from "../utility/fetchData";
-import Backdrop from "./BackDrop";
+import { getTypeColor } from "../utility/typeColor";
+import { pokeContext } from "../store/pokemons-context";
+import Backdrop from "./UI/BackDrop";
+import Modal from "./UI/Modal";
 
 import styles from "./ListItem.module.css";
-import Modal from "./Modal";
 
 function ListItem({ url, data, children }) {
+  const context = useContext(pokeContext);
   const [pokemon, setPokemon] = useState({});
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [type, setType] = useState("");
 
   useEffect(() => {
     async function getPokemon() {
@@ -15,6 +19,7 @@ function ListItem({ url, data, children }) {
       try {
         const pokemon = await fetcher(url);
         setPokemon(pokemon);
+        setType(pokemon.types[0].type.name);
       } catch (err) {}
     }
     getPokemon();
@@ -23,19 +28,24 @@ function ListItem({ url, data, children }) {
   function toggleModal() {
     setIsOpenModal((modal) => !modal);
   }
-  console.log(pokemon.types[0].type.name)
+
   return (
     <>
       {isOpenModal && <Backdrop onCancel={toggleModal} />}
       {isOpenModal && <Modal pokemon={pokemon} />}
       <div
-        className={`${styles.container} ${pokemon?.types[0]?.type?.name}`}
+        className={styles.container}
         onClick={toggleModal}
+        style={{ backgroundColor: getTypeColor(type), borderRadius: "16px" }}
       >
-        <p>
-          <b>{children}</b>
-        </p>
+        <div>
+          <span>
+            <b>{children}</b>
+          </span>
+          <span> #{pokemon.id}</span>
+        </div>
         <img
+          className={styles.img}
           alt={children}
           src={
             pokemon?.sprites?.front_default ||

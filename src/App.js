@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { fetcher } from "./utility/fetchData";
 import ListItem from "./components/ListItem";
 import ListContainer from "./components/ListContainer";
-import Header from "./components/Header";
+import Header from "./components/UI/Header";
 import Pagination from "./components/Pagination";
 
 function App() {
+  
   const [offset, setOffset] = useState(0);
   const [pokemonArr, setPokemonArr] = useState([]);
   const [searchedPokemon, setSearchedPokemon] = useState(null);
@@ -38,12 +39,18 @@ function App() {
   function handlePage(page) {
     const offset = page * 20;
     setOffset(offset);
+    fetchByName(null);
   }
+
+  function toggleModalMyPokemons() {
+    alert('button')
+  }
+
 
   return (
     <div className="appContainer">
-      <Header filterhandler={fetchByName} />
-      <ListContainer title="Pokemons" main>
+      <Header filterhandler={fetchByName} onClickButton={toggleModalMyPokemons}/>
+      <ListContainer title="Pokemons">
         {searchedPokemon && (
           <ListItem data={searchedPokemon}>{searchedPokemon.name}</ListItem>
         )}
