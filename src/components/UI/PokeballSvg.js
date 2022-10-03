@@ -5,8 +5,8 @@ function PokeballSvg() {
     <div className={styles.ico}>
       <svg
         className={styles.svg}
-        width="36px"
-        height="36px"
+        width="58px"
+        height="58px"
         viewBox="0 0 76 76"
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"

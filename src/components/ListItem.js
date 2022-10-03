@@ -4,14 +4,16 @@ import { getTypeColor } from "../utility/typeColor";
 import { pokeContext } from "../store/pokemons-context";
 import Backdrop from "./UI/BackDrop";
 import Modal from "./UI/Modal";
+import PokeballSvg from "./UI/PokeballSvg";
 
 import styles from "./ListItem.module.css";
-import PokeballSvg from "./UI/PokeballSvg";
 
 function ListItem({ url, data, children }) {
   const context = useContext(pokeContext);
+
   const [pokemon, setPokemon] = useState({});
   const [isOpenModal, setIsOpenModal] = useState(false);
+
   const [type, setType] = useState("");
 
   useEffect(() => {
@@ -34,15 +36,16 @@ function ListItem({ url, data, children }) {
     <>
       {isOpenModal && <Backdrop onCancel={toggleModal} />}
       {isOpenModal && <Modal pokemon={pokemon} />}
+
       <div
         className={styles.container}
         onClick={toggleModal}
-        style={{ backgroundColor: getTypeColor(type), borderRadius: "16px" }}
+        style={{ backgroundColor: getTypeColor(type) }}
       >
         <div className={styles.containerTitle}>
           <span> #{pokemon.id}</span>
           <span className={styles.bold}>{children}</span>
-          <PokeballSvg />
+          <div style={{width: '20px'}}></div>
         </div>
         <img
           className={styles.img}

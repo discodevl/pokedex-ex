@@ -6,6 +6,10 @@ function Provider({ children }) {
   const [addedPokemons, setAddedPokemons] = useState([]);
 
   function addPokemon(pokemon) {
+    const hasAlready = addedPokemons.find(poke => poke.id === pokemon.id);
+    if(hasAlready) {
+      return;
+    }
     setAddedPokemons((pokemons) => [pokemon, ...pokemons]);
   }
 

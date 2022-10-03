@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactDom from "react-dom";
+import { pokeContext } from "../../store/pokemons-context";
+import PokeballSvg from "./PokeballSvg";
 import styles from "./Modal.module.css";
 
 function Modal({ pokemon }) {
+  const context = useContext(pokeContext);
   const [types, setTypes] = useState(pokemon.types);
+
+  function addPokemonToFavs() {
+    context.addPokemon(pokemon);
+  }
 
   return ReactDom.createPortal(
     <div className={styles.modal}>
       <h2 style={{ textAlign: "center" }}>Detailed View</h2>
       <div className={styles.body}>
+        <div className={styles.nameSection}>
+          <h1>#{pokemon.id}</h1>
+          <h1>{pokemon.name}</h1>
+          <div onClick={addPokemonToFavs}>
+            <PokeballSvg />
+          </div>
+        </div>
         <div className={styles.containerImg}>
           <img
             className={styles.img}
@@ -21,7 +35,6 @@ function Modal({ pokemon }) {
           <span>HP: {pokemon.stats[0].base_stat}</span>
         </div>
         <div className={styles.stats}>
-          <span>{pokemon.name}</span>
           <span>ability: {pokemon.abilities[0].ability.name}</span>
           <span>Attack: {pokemon.stats[1].base_stat}</span>
           <span>Defense: {pokemon.stats[2].base_stat}</span>

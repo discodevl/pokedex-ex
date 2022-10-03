@@ -1,13 +1,11 @@
 import Button from "./Button";
 import styles from "./Header.module.css";
 
-function Header({ filterhandler, onClickButton}) {
+function Header({ filterhandler, onClickButton }) {
   function searchHandler(event) {
     const search = event.target.value.trim();
     filterhandler(search);
   }
-
-
 
   return (
     <div className={styles.header}>
