@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const pokeContext = createContext();
 
@@ -8,14 +9,16 @@ function Provider({ children }) {
   function addPokemon(pokemon) {
     const hasAlready = addedPokemons.find(poke => poke.id === pokemon.id);
     if(hasAlready) {
+      toast.success('Pokemon already added');
       return;
     }
+    toast.success('Pokemon added to your list');
     setAddedPokemons((pokemons) => [pokemon, ...pokemons]);
   }
 
-  function removePokemon(pokemon) {
+  function removePokemon(id) {
     setAddedPokemons((pokemons) =>
-      pokemons.filter((poke) => poke.id !== pokemon.id)
+      pokemons.filter((poke) => id !== poke.id)
     );
   }
 

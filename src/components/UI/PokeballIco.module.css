@@ -6,7 +6,7 @@
 
 .ico:hover {
   border-radius: 20px;
-  background-color: rgba(118, 118, 118, 0.464);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .svgRemove:hover {
   fill: gray;

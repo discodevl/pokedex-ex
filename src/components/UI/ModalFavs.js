@@ -1,8 +1,7 @@
-import {useContext} from 'react';
+import { useContext } from "react";
 import ReactDom from "react-dom";
-import {pokeContext} from '../../store/pokemons-context';
-import CardList from '../ListContainer';
-import ListItem from '../ListItem';
+import { pokeContext } from "../../store/pokemons-context";
+import ListItemFav from "../ItemListFav";
 import styles from "./Modal.module.css";
 
 function ModalFavs() {
@@ -10,10 +9,19 @@ function ModalFavs() {
 
   return ReactDom.createPortal(
     <div className={styles.modal}>
+      <h1 style={{ textAlign: "center" }}>My pokemons</h1>
       <div className={styles.body}>
-        <CardList>
-          {context.addedPokemons.map((poke, i) => <ListItem key={i} data={poke}>{poke.name}</ListItem>)}
-        </CardList>
+        {context.addedPokemons.length > 0 ? (
+          context.addedPokemons.map((poke, i) => (
+            <ListItemFav key={i} pokemon={poke}>
+              {poke.name.toUpperCase()}
+            </ListItemFav>
+          ))
+        ) : (
+          <div>
+            <span>Your list is empty...</span>
+          </div>
+        )}
       </div>
     </div>,
     document.getElementById("portal")

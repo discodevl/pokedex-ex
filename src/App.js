@@ -6,6 +6,7 @@ import ModalFavs from "./components/UI/ModalFavs";
 import Header from "./components/UI/Header";
 import Pagination from "./components/Pagination";
 import Backdrop from "./components/UI/BackDrop";
+import { toast } from "react-toastify";
 
 function App() {
   const [offset, setOffset] = useState(0);

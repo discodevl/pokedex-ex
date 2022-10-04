@@ -4,7 +4,6 @@ import { getTypeColor } from "../utility/typeColor";
 import { pokeContext } from "../store/pokemons-context";
 import Backdrop from "./UI/BackDrop";
 import Modal from "./UI/Modal";
-import PokeballSvg from "./UI/PokeballSvg";
 
 import styles from "./ListItem.module.css";
 
