@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetcher } from "./utility/fetchData";
 import ListItem from "./components/ListItem";
 import ListContainer from "./components/ListContainer";
 import ModalFavs from "./components/UI/ModalFavs";
-import Header from "./components/UI/Header";
 import Pagination from "./components/Pagination";
 import Backdrop from "./components/UI/BackDrop";
-import { toast } from "react-toastify";
+import Header from "./components/UI/Header";
 
 function App() {
   const [offset, setOffset] = useState(0);
   const [pokemonArr, setPokemonArr] = useState([]);
   const [searchedPokemon, setSearchedPokemon] = useState(null);
   const [isOpenModalFavorites, setIsOpenModalFavorites] = useState(false);
-
-  function toggleModalFavorites() {
-    setIsOpenModalFavorites((modal) => !modal);
-  }
 
   useEffect(() => {
     async function getPokemons() {

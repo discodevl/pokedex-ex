@@ -7,7 +7,7 @@ import Modal from "./UI/Modal";
 
 import styles from "./ListItem.module.css";
 
-function ListItem({ url, data, children }) {
+function ListItem({ url, data, children, ids }) {
   const context = useContext(pokeContext);
 
   const [pokemon, setPokemon] = useState({});
@@ -30,6 +30,7 @@ function ListItem({ url, data, children }) {
   function toggleModal() {
     setIsOpenModal((modal) => !modal);
   }
+
 
   return (
     <>
