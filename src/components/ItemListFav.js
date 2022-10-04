@@ -18,7 +18,13 @@ function ListItemFav({ children, pokemon }) {
     >
       <div className={styles.itemContainer}>
         <div className={styles.imgWrapper}>
-          <img alt={children} src={pokemon.sprites?.front_default} />
+          <img
+            alt={children}
+            src={
+              pokemon.sprites?.front_default ||
+              require("../assets/McLMqoqki-2225151428.png")
+            }
+          />
           <span>HP:{pokemon.stats[0].base_stat}</span>
         </div>
         <div>

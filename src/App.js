@@ -53,8 +53,8 @@ function App() {
 
   return (
     <>
-    {isOpenModalFavorites && <Backdrop onCancel={toggleModalMyPokemons}/>}
-    {isOpenModalFavorites && <ModalFavs />}
+      {isOpenModalFavorites && <Backdrop onCancel={toggleModalMyPokemons} />}
+      {isOpenModalFavorites && <ModalFavs />}
       <div className="appContainer">
         <Header
           filterhandler={fetchByName}
