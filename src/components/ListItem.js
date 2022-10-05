@@ -6,14 +6,16 @@ import Backdrop from "./UI/BackDrop";
 import Modal from "./UI/Modal";
 
 import styles from "./ListItem.module.css";
+import PokeballSvg from "./UI/PokeballIco";
 
-function ListItem({ url, data, children, ids }) {
+function ListItem({ url, data, children }) {
   const context = useContext(pokeContext);
 
   const [pokemon, setPokemon] = useState({});
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const [type, setType] = useState("");
+  let addBtn = false;
 
   useEffect(() => {
     async function getPokemon() {
@@ -28,9 +30,14 @@ function ListItem({ url, data, children, ids }) {
   }, [url, data]);
 
   function toggleModal() {
+    if (addBtn) return;
     setIsOpenModal((modal) => !modal);
   }
 
+  function addPokemon() {
+    addBtn = true;
+    context.addPokemon(pokemon);
+  }
 
   return (
     <>
@@ -45,7 +52,9 @@ function ListItem({ url, data, children, ids }) {
         <div className={styles.containerTitle}>
           <span> #{pokemon.id}</span>
           <span className={styles.bold}>{children}</span>
-          <div style={{width: '20px'}}></div>
+          <div onClick={addPokemon}>
+            <PokeballSvg width="24px" height="24px" />
+          </div>
         </div>
         <img
           className={styles.img}

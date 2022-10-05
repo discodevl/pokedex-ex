@@ -29,8 +29,8 @@ function Provider({ children }) {
   return (
     <pokeContext.Provider value={value}>
       <ToastContainer
-        position="top-right"
-        autoClose={1500}
+        position="top-center"
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
